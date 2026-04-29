@@ -1,0 +1,116 @@
+import java.util.Scanner;
+
+public class SmartCalculatorUtilitySuite {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+
+        do {
+            System.out.println("\n==============================");
+            System.out.println(" Smart Calculator & Utility ");
+            System.out.println("==============================");
+            System.out.println("1. Greatest of 3 Numbers");
+            System.out.println("2. Addition");
+            System.out.println("3. Subtraction");
+            System.out.println("4. Multiplication");
+            System.out.println("5. Division");
+            System.out.println("6. Even or Odd");
+            System.out.println("7. Swap Two Numbers");
+            System.out.println("8. Simple Interest");
+            System.out.println("9. Exit");
+            System.out.print("Enter your choice: ");
+
+            choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter 3 numbers: ");
+                    double a = sc.nextDouble();
+                    double b = sc.nextDouble();
+                    double c = sc.nextDouble();
+
+                    if (a >= b && a >= c)
+                        System.out.println("Greatest Number = " + a);
+                    else if (b >= a && b >= c)
+                        System.out.println("Greatest Number = " + b);
+                    else
+                        System.out.println("Greatest Number = " + c);
+                    break;
+
+                case 2:
+                    System.out.print("Enter 2 numbers: ");
+                    a = sc.nextDouble();
+                    b = sc.nextDouble();
+                    System.out.println("Sum = " + (a + b));
+                    break;
+
+                case 3:
+                    System.out.print("Enter 2 numbers: ");
+                    a = sc.nextDouble();
+                    b = sc.nextDouble();
+                    System.out.println("Subtraction = " + (a - b));
+                    break;
+
+                case 4:
+                    System.out.print("Enter 2 numbers: ");
+                    a = sc.nextDouble();
+                    b = sc.nextDouble();
+                    System.out.println("Multiplication = " + (a * b));
+                    break;
+
+                case 5:
+                    System.out.print("Enter 2 numbers: ");
+                    a = sc.nextDouble();
+                    b = sc.nextDouble();
+
+                    if (b != 0)
+                        System.out.println("Division = " + (a / b));
+                    else
+                        System.out.println("Division by zero is not allowed.");
+                    break;
+
+                case 6:
+                    System.out.print("Enter a number: ");
+                    int num = sc.nextInt();
+
+                    if (num % 2 == 0)
+                        System.out.println(num + " is Even");
+                    else
+                        System.out.println(num + " is Odd");
+                    break;
+
+                case 7:
+                    System.out.print("Enter 2 numbers: ");
+                    a = sc.nextDouble();
+                    b = sc.nextDouble();
+
+                    double temp = a;
+                    a = b;
+                    b = temp;
+
+                    System.out.println("After Swapping: First = " + a + ", Second = " + b);
+                    break;
+
+                case 8:
+                    System.out.print("Enter Principal, Rate, Time: ");
+                    double p = sc.nextDouble();
+                    double r = sc.nextDouble();
+                    double t = sc.nextDouble();
+
+                    double si = (p * r * t) / 100;
+                    System.out.println("Simple Interest = " + si);
+                    break;
+
+                case 9:
+                    System.out.println("Exiting Program... Thank You!");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+
+        } while (choice != 9);
+
+        sc.close();
+    }
+}
