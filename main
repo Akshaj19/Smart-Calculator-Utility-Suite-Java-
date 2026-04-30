@@ -112,5 +112,6 @@ public class SmartCalculatorUtilitySuite {
         } while (choice != 9);
 
         sc.close();
+
     }
 }
